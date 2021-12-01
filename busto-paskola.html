@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes + TS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <h1 class="col-1">Paskolos</h1>
+            <ul class="col-2">
+                <li><a href="greitoji-paskola.html">Greitoji paskola</a></li>
+                <li><a href="busto-paskola.html" class="active">Būsto paskola</a></li>
+                <li><a href="vartojimo-paskola.html">Vartojimo paskola</a></li>
+            </ul>
+            <div class="col-3 inputBox ">
+                <form>
+                    <h3>Būsto paskolos skaičiuoklė</h3>
+                    <!-- paskolos dydis .Maksimalus paskolos dydis paskaičiuojamas pagal alga -->
+                    <label>Paskolos dydis</label>
+                    <p id="neteisingiDydisDuomenysBP"></p>
+                    <input type="number" id="paskolosDydisPagalAlga" name="paskolosDydisPagalAlga" onkeypress='validateJustNumber(event)' placeholder="Max dydis skaičiuosis pagal algą" required/>
+                    <!-- terminas . max terminas 30metu-->
+                    <label>Terminas metais</label>
+                    <p id="neteisingiTerminoDuomenysBP"></p>
+                    <input type="number" id="terminasBP" step="1" name="terminasBP" onkeypress='validateJustNumber(event)' placeholder="Max 30 metų" required/>
+                    <label>Alga</label>
+                    <p id="neteisingiAlgosDuomenysBP"></p>
+                    <input type="number" id="alga" name="alga" onkeypress='validateJustNumber(event)' placeholder="Įveskite gaunamą algą" required/>
+                    <label>Turimi vaikai</label>
+                    <p id="neteisingiVaikuDuomenysBP"></p>
+                    <input type="number" id="vaikai" name="vaikai" onkeypress='validateJustNumber(event)' placeholder="Įveskite turimų vaikų kiekį" required/>
+                    <!-- palukanos 2% -->
+                    <label>Palūkanos %</label>
+                    <input type="number" id="palukanosBP" name="palukanosBP" placeholder="2%" value="2" readonly/>
+                    <div class="button-container">
+                        <button type="button" onclick="showBPResult()">Pateikti</button>
+                        <button type="reset" onclick="refreshPage()">Ištrinti</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-4 outputBox">
+                <p id="BPresult">Kad pasirodytų skaičiuoklės duomenys, turite užpildyti lentelę.</p>
+            </div>
+        </div>
+    </section>
+
+<script src="dist/countLoan.js"></script>
+<script src="dist/helper.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes + TS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <h1 class="col-1">Paskolos</h1>
+            <ul class="col-2">
+                <li><a href="greitoji-paskola.html">Greitoji paskola</a></li>
+                <li><a href="busto-paskola.html">Būsto paskola</a></li>
+                <li><a href="vartojimo-paskola.html" class="active">Vartojimo paskola</a></li>
+            </ul>
+            <div class="col-3 inputBox ">
+                <form>
+                    <h3>Vartojimo paskolos skaičiuoklė</h3>
+                    <label>Paskolos dydis</label>
+                    <p id="neteisingiDydisDuomenysVP"></p>
+                    <input type="number" id="paskolosDydisVP" name="paskolosDydisVP" onkeypress='validateJustNumber(event)'  placeholder="Max 10000 eurų" required/>
+                    <label>Terminas metais</label>
+                    <p id="neteisingiTerminoDuomenysVP"></p>
+                    <input type="number" id="terminasVP" step="1" name="terminasVP" onkeypress='validateJustNumber(event)'  placeholder="Max 5 metai" required/>
+                    <label>Daikto tipas</label>
+                    <p id="neteisingaiPasirinktasDaiktoTipas"></p>
+                    <select name="daiktoTipas" id="daiktoTipas" required>
+                        <option value="nepasirinkta">Pasirinkite daikto tipą</option>
+                        <option value="automobilis">Automobilis</option>
+                        <option value="motociklas">Motociklas</option>
+                    </select>
+                    <label>Priklauso nuo daikto tipo.  %</label>
+                    <input type="number" id="palukanosVP" name="palukanosVP" placeholder="Palūkanos priklauso nuo daikto tipo" readonly/>
+                    <div class="button-container">
+                        <button type="button" onclick="showVPResult()">Pateikti</button>
+                        <button type="reset" onclick="refreshPage()">Ištrinti</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-4 outputBox">
+                <p id="VPresult">Kad pasirodytų skaičiuoklės duomenys, turite užpildyti lentelę.</p>
+            </div>
+        </div>
+    </section>
+
+<script src="dist/countLoan.js"></script>
+<script src="dist/helper.js"></script>
+</body>
+</html>

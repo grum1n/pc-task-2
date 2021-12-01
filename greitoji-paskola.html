@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes + TS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <h1 class="col-1">Paskolos</h1>
+            <ul class="col-2">
+                <li><a href="greitoji-paskola.html" class="active">Greitoji paskola</a></li>
+                <li><a href="busto-paskola.html">Būsto paskola</a></li>
+                <li><a href="vartojimo-paskola.html">Vartojimo paskola</a></li>
+            </ul>
+            <div class="col-3 inputBox ">
+                <form>
+                    <h3>Greitosios paskolos skaičiuoklė</h3>
+                    <label>Paskolos dydis</label>
+                    <p id="neteisingiDydisDuomenys"></p>
+                    <input type="number" id="paskolosDydis" name="paskolosDydis" onkeypress='validateJustNumber(event)' placeholder="Max 5000 eurų" required/>
+                    <label>Terminas metais</label>
+                    <p id="neteisingiTerminoDuomenys"></p>
+                    <input type="number" id="terminas" name="terminas" step="1" onkeypress='validateJustNumber(event)' placeholder="Max 2 metai" required/>
+                    <label>Palūkanos %</label>
+                    <input type="number" id="palukanos" name="palukanos" placeholder="20%" value="20" readonly/>
+                    <div class="button-container">
+                        <button type="button" onclick="showGPResult()">Pateikti</button>
+                        <button type="reset" onclick="refreshPage()">Ištrinti</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-4 outputBox">
+                <p id="GPresult">Kad pasirodytų skaičiuoklės duomenys, turite užpildyti lentelę.</p>
+            </div>
+        </div>
+    </section>
+
+<script src="dist/countLoan.js"></script>
+<script src="dist/helper.js"></script>
+</body>
+</html>

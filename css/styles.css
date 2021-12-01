@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{margin: 0;}
+body{
+    margin: 0;
+    background-color: rgb(53, 44, 63);
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.col-1 { grid-area: col-1;}
+.col-2 { grid-area: col-2;}
+.col-3 {grid-area: col-3;}
+.col-4 {grid-area: col-4;}
+.col-5 {grid-area: col-5;}
+.col-6 {grid-area: col-6;}
+
+
+section{margin:0;width: 100%;}
+
+.container{
+    margin: 50px auto;
+    padding: 10px;
+    max-width: 800px;
+    background-color: #c5c5c5;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    grid-template-areas: 
+    "col-1 col-1"
+    "col-2 col-2"
+    "col-3 col-4"
+}
+
+h1{
+    margin:0;
+    font-size: 2rem;
+    color:rgb(28, 22, 36);
+    text-align: center;
+}
+h1:after{
+    content:"";
+    display: block;
+    width: 200px;
+    border-top: 3px solid #556f2b;
+    margin:10px auto 32px;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between; 
+}
+
+li{
+    padding: 5px 3px;
+    width: 100%;
+    text-align: center;
+}
+a{
+    width: 100%;
+    color: #fff;
+    background-color: #556f2b;
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+}
+a:hover, .active{
+    background-color: #2e410f;
+}
+
+.inputBox{
+    background-color: #2e410f;
+    border-radius: 5px 0 0 5px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 10px;
+    width: 100%;
+    border-radius: 3px;
+}
+h3{
+    margin: 0;
+    text-align: center;
+    padding: 20px 0;
+    color: #fff;
+    font-size: 1.5rem;
+}
+label {
+   padding-left: 20px;
+   padding-bottom: 0;
+   color: #fff;
+}
+form > p{
+    margin: 0;
+    padding: 3px 20px;
+    color: #f69191;
+}
+
+input{
+    margin: 5px 0 20px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 3px;
+}
+
+select{
+    margin: 5px 0 20px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 3px;
+}
+
+
+button{
+    margin: 20px 0;
+    padding: 10px;
+    width: 50%;
+    border:none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.outputBox{
+    border:1px solid #2e410f;
+    border-radius:0 5px 5px 0;
+    padding: 20px;
+}
+
+.result-table{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+.result-table li {
+    text-align: left;
+}
+
+.result-table h3{
+    margin: 0;
+    color:#2e410f;
+}
+
+
+
+/*greitosios paskolos lentele*/
+.gp-result-table{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+.gp-result-table li {
+    text-align: left;
+}
+.gp-result-table li:nth-child(4) {
+    border-bottom: 1px solid #2e410f;
+}
+
+
+.gp-result-table h3{
+    margin: 0;
+    color:#2e410f;
+}
+
+
+
+.button-container{
+    display: flex;
+    gap: 20px;
+}
+
+
+@media screen and (max-width:500px){
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        grid-template-areas: 
+        "col-1"
+        "col-2"
+        "col-3"
+        "col-4"
+    }
+    ul{
+        display: flex;
+      flex-direction: column;
+    }
+    .inputBox{
+        border-radius:5px 5px 0 0;
+    }
+    .outputBox{
+        border-radius:0 0 5px 5px;
+    }
+}
